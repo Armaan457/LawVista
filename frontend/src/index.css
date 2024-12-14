@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* create global styles */
+:root {
+  --PrimaryBlack: #161616;
+  --PrimaryGrayDark: #1D1D1D;
+  --PrimaryGrayLight: #393939;
+  --PrimaryGrayLighter: #494949;
+  --PrimaryGrayTextLight: #BEBEBE;
+  --PrimaryGrayTextDark: #9E9E9E;
+  --PrimaryBlue: #509FFF;
+  --PrimaryGrayHover: #2E2E2E;
+  --PrimaryGrayIcons: #676767;
+}
+
+.inputCheckbox label{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--PrimaryGrayLight);
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.inputCheckbox{
+  display: flex;
+}
+
+.sidebarMain{
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--PrimaryGrayLighter);
+  border-radius: 10px;
+  height: 100vh;
+  overflow: scroll;
+  width: 400px;
+  /* transform: translateX(100%); */
+}

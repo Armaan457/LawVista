@@ -1,0 +1,26 @@
+/* Add this to your global CSS or within a module for the Sidebar component */
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar on WebKit browsers */
+  }
+  
+  .scrollbar-minimal::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-minimal::-webkit-scrollbar-track {
+    background: transparent; /* Transparent track */
+  }
+  
+  .scrollbar-minimal::-webkit-scrollbar-thumb {
+    background-color: #444; /* Dark gray for the thumb */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid transparent; /* Adds some space around the thumb */
+    background-clip: padding-box;
+  }
+  
+  /* Firefox scrollbar styling */
+  .scrollbar-minimal {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #444 transparent; /* Thumb color and track color */
+  }
+  
