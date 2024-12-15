@@ -16,7 +16,7 @@ export const translateToEnglishV2 = async (text, apiKey) => {
       params: {
         q: text,
         target: 'en', // Translate to English
-        key: 'AIzaSyCTxPR4C6-5HNRhvRG5k4dCF-gCRlm72Vc',
+        key: '',
       },
     });
 
