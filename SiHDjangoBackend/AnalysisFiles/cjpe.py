@@ -81,7 +81,7 @@ def extract_facts_and_outcome(case_file_content_full):
     try:
         response = llm.invoke(prompt)
     except Exception as e:
-        print("armaan randi")
+        print("error")
 
     facts, outcome = "", ""
     for line in response.content.split("\n"):
