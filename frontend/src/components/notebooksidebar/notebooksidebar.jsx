@@ -4,7 +4,7 @@ import { SearchBar } from "../sidebar/search-bar";
 import { ChatListItem } from "../sidebar/chat-list-item";
 import { useNavigate, useParams } from "react-router-dom";
 
-export function Sidebar({ activeNotebookId, notebooks, onNotebookSelect, onSearch }) {
+export function   Sidebar({ activeNotebookId, notebooks, onNotebookSelect, onSearch }) {
   const [originalNotebooks, setOriginalNotebooks] = useState([]);
   const [notebookList, setNotebookList] = useState([]);
   const [activeIdMain, setActiveIdMain] = useState(null);

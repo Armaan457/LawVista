@@ -118,7 +118,7 @@ export default function Home() {
     });
 
     setActiveId(newChatId); // Set it as active
-    navigate(`/${newChatId}`);
+    navigate(`/chat/${newChatId}`);
   };
 
   // Filter Chats Based on Search
@@ -162,7 +162,7 @@ export default function Home() {
         activeChatId={activeId}
         createNewChat={createChat} // Pass createChat to Sidebar
         onSearch={handleSearch} // Pass handleSearch to Sidebar
-        onChatSelect={(chatId) => navigate(`/${chatId}`)} // Update active chat on selection
+        onChatSelect={(chatId) => navigate(`/chat/${chatId}`)} // Update active chat on selection
       />
       <div className="flex dark:bg-PrimaryBlack dark:text-gray-200 bg-PrimaryWhite text-black h-screen w-full">
         {activeChat && (
