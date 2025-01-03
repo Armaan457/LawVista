@@ -15,6 +15,14 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+
+    #hello 
+    
+    # Dynamically bind the port for deployment
+    if "runserver" in sys.argv:
+        port = os.getenv("PORT", "8000")  # Default to 8000 if PORT is not set
+        sys.argv[sys.argv.index("runserver") + 1] = f"0.0.0.0:{port}"
+
     execute_from_command_line(sys.argv)
 
 
