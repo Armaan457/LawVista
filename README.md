@@ -1,6 +1,14 @@
 # LawVista
 
-LawVista is an AI-powered research engine designed specifically for commercial courts, revolutionizing the way legal professionals search for commercial cases and laws. It streamlines legal research with features like case summarization, prior case retrieval, legal statute identification and court judgment prediction with explanations along with multilingual support and text to voice functionality. 
+LawVista is an AI-powered research engine designed specifically for commercial courts, revolutionizing the way legal professionals search for commercial cases and laws.
+
+**Project features:**
+- Case summarization
+- Prior case retrieval
+- Legal statute identification
+- Court judgment prediction with explanations
+- Multilingual support
+- Text to voice
 
 # Technologies used
 
