@@ -16,12 +16,11 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
 
-    #hello 
-    
     # Dynamically bind the port for deployment
     if "runserver" in sys.argv:
         port = os.getenv("PORT", "8000")  # Default to 8000 if PORT is not set
-        sys.argv[sys.argv.index("runserver") + 1] = f"0.0.0.0:{port}"
+        if len(sys.argv) <= sys.argv.index("runserver") + 1:
+            sys.argv.append(f"0.0.0.0:{port}")  # Add host and port if not provided
 
     execute_from_command_line(sys.argv)
 
