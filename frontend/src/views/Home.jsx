@@ -27,15 +27,15 @@ export default function Home() {
   // Handle Send Message
   const handleSend = async (message) => {
     //handle google Translation to english if language is not english
-    try {
-      message = await translateToEnglishV2(
-        message,
-        "auto",
-      );
-    } catch (error) {
-      toast.error("Failed to translate message to English");
-      return;
-    }
+    // try {
+    //   message = await translateToEnglishV2(
+    //     message,
+    //     "auto",
+    //   );
+    // } catch (error) {
+    //   toast.error("Failed to translate message to English");
+    //   return;
+    // }
 
     console.log("Message to send:", message);
     const newMessage = { user: message, ai: null };
