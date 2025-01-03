@@ -21,7 +21,7 @@ export function   Sidebar({ activeNotebookId, notebooks, onNotebookSelect, onSea
   };
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/notebook/get-chats", {
+    fetch("https://lawvista.onrender.com/api/notebook/get-chats", {
       credentials: "include",
       method: "GET",
       headers: {
@@ -43,7 +43,7 @@ export function   Sidebar({ activeNotebookId, notebooks, onNotebookSelect, onSea
   }, []);
 
   const createNotebook = () => {
-    fetch("http://localhost:3000/api/notebook/create-notebook", {
+    fetch("https://lawvista.onrender.com/api/notebook/create-notebook", {
       credentials: "include",
       method: "POST",
       headers: {

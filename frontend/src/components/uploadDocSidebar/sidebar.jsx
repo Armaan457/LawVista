@@ -10,7 +10,7 @@ export function Sidebar({ activeDocId, docs, onDocSelect, handlePdfText }) {
   const [filteredDocs, setFilteredDocs] = useState(docs); // State for filtered docs
 
   const f = async () => {
-    const res = await fetch("http://localhost:3000/api/doc",{
+    const res = await fetch("https://lawvista.onrender.com/api/doc",{
       credentials: "include",
       method: "GET",
       headers: {

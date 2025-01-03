@@ -20,7 +20,7 @@ const NotebookPage = () => {
 
   const fetchNotebooks = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/notebook/get-chats", {
+      const response = await fetch("https://lawvista.onrender.com/api/notebook/get-chats", {
         credentials: "include",
         method: "GET",
         headers: {
