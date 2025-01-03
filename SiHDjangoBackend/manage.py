@@ -2,11 +2,12 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import uvicorn  # Import Uvicorn
 
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SiHDjangoBackend.settings')
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SiHDjangoBackend.settings")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -16,14 +17,18 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
 
-    # Dynamically bind the port for deployment
+    # Check for runserver command and use Uvicorn instead
     if "runserver" in sys.argv:
-        port = os.getenv("PORT", "8000")  # Default to 8000 if PORT is not set
-        if len(sys.argv) <= sys.argv.index("runserver") + 1:
-            sys.argv.append(f"0.0.0.0:{port}")  # Add host and port if not provided
+        port = int(os.getenv("PORT", 8000))  # Get the port from the environment variable or default to 8000
+        uvicorn.run(
+            "SiHDjangoBackend.asgi:application",  # ASGI application path
+            host="0.0.0.0",  # Bind to all network interfaces
+            port=port,
+            log_level="info",
+        )
+    else:
+        execute_from_command_line(sys.argv)
 
-    execute_from_command_line(sys.argv)
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
