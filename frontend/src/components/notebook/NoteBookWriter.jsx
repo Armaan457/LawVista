@@ -24,7 +24,7 @@ const NotebookWriter = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/notebook/get-chats", {
+    fetch("https://lawvista.onrender.com/api/notebook/get-chats", {
       credentials: "include",
       method: "GET",
       headers: {
@@ -43,7 +43,7 @@ const NotebookWriter = () => {
   const handleNotebookSelect = (notebookId) => {
     setSelectedNotebook(notebookId);
 
-    fetch(`http://localhost:3000/api/notebook/${notebookId}`, {
+    fetch(`https://lawvista.onrender.com/api/notebook/${notebookId}`, {
       credentials: "include",
       method: "GET",
       headers: {
@@ -65,7 +65,7 @@ const NotebookWriter = () => {
     const newNotebookTitle = `Notebook ${date.toISOString()}`;
     // const notebookDate = date.toISOString()
     if (newNotebookTitle) {
-      fetch("http://localhost:3000/api/notebook/create-notebook", {
+      fetch("https://lawvista.onrender.com/api/notebook/create-notebook", {
         credentials: "include",
         method: "POST",
         headers: {
@@ -91,7 +91,7 @@ const NotebookWriter = () => {
 
   const saveEditedSegment = () => {
     fetch(
-      `http://localhost:3000/api/notebook/${selectedNotebook}/update-segment/${editingSegment}`,
+      `https://lawvista.onrender.com/api/notebook/${selectedNotebook}/update-segment/${editingSegment}`,
       {
         credentials: "include",
         method: "PUT",
@@ -130,7 +130,7 @@ const NotebookWriter = () => {
 
   const saveNewSegment = () => {
     fetch(
-      `http://localhost:3000/api/notebook/${selectedNotebook}/add-segment`,
+      `https://lawvista.onrender.com/api/notebook/${selectedNotebook}/add-segment`,
       {
         credentials: "include",
         method: "POST",

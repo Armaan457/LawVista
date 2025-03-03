@@ -49,7 +49,7 @@ export default function RegisterPage() {
 
       if (data.success) {
         toast.success("Registration successful.");
-        navigate("/");
+        navigate("/chat");
       } else {
         toast.error("Registration failed. Please try again.");
       }

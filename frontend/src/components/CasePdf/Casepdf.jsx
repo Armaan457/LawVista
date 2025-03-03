@@ -27,7 +27,7 @@ const Casepdf = () => {
   // Fetch data when component mounts or source changes
   useEffect(() => {
     const fetchCaseData = async () => {
-      const response = await fetch(`http://localhost:3000/api/cases/${source}`);
+      const response = await fetch(`https://lawvista.onrender.com/api/cases/${source}`);
       const data = await response.json();
       setCaseData(data);
     };

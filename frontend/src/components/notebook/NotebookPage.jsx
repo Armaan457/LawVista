@@ -13,7 +13,7 @@ const NoteBookMain = () => {
   // Fetch notebook details
   useEffect(() => {
     const fetchNotebook = async () => {
-      const res = await fetch(`http://localhost:3000/api/notebook/${id}`, {
+      const res = await fetch(`https://lawvista.onrender.com/api/notebook/${id}`, {
         credentials: "include",
         method: "GET",
         headers: {
@@ -35,7 +35,7 @@ const NoteBookMain = () => {
     debounce(async (newTitle) => {
       setIsSaving(true);
       try {
-        await fetch(`http://localhost:3000/api/notebook/${id}/update-title`, {
+        await fetch(`https://lawvista.onrender.com/api/notebook/${id}/update-title`, {
           credentials: "include",
           method: "PUT",
           headers: {

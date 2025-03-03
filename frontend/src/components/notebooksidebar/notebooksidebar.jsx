@@ -4,7 +4,7 @@ import { SearchBar } from "../sidebar/search-bar";
 import { ChatListItem } from "../sidebar/chat-list-item";
 import { useNavigate, useParams } from "react-router-dom";
 
-export function Sidebar({ activeNotebookId, notebooks, onNotebookSelect, onSearch }) {
+export function   Sidebar({ activeNotebookId, notebooks, onNotebookSelect, onSearch }) {
   const [originalNotebooks, setOriginalNotebooks] = useState([]);
   const [notebookList, setNotebookList] = useState([]);
   const [activeIdMain, setActiveIdMain] = useState(null);
@@ -21,7 +21,7 @@ export function Sidebar({ activeNotebookId, notebooks, onNotebookSelect, onSearc
   };
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/notebook/get-chats", {
+    fetch("https://lawvista.onrender.com/api/notebook/get-chats", {
       credentials: "include",
       method: "GET",
       headers: {
@@ -43,7 +43,7 @@ export function Sidebar({ activeNotebookId, notebooks, onNotebookSelect, onSearc
   }, []);
 
   const createNotebook = () => {
-    fetch("http://localhost:3000/api/notebook/create-notebook", {
+    fetch("https://lawvista.onrender.com/api/notebook/create-notebook", {
       credentials: "include",
       method: "POST",
       headers: {

@@ -76,13 +76,13 @@ export default function App() {
     });
 
     setActiveId(newChatId); // Set it as active
-    navigate(`/${newChatId}`);
+    navigate(`/chat/${newChatId}`);
   };
   
 
   // Redirect to a new chat ID if user lands on "/"
   useEffect(() => {
-    if (location.pathname === "/") {
+    if (location.pathname === "/chat") {
       createChat(); // Automatically create a new chat if landing on "/"
     }
   }, [location.pathname]);
@@ -92,7 +92,7 @@ export default function App() {
 
   const setActiveChatId = (id) => {
     setActiveId(id);
-    navigate(`/${id}`);
+    navigate(`/chat/${id}`);
   };
 
   const handleSearch = (query) => {
@@ -101,19 +101,19 @@ export default function App() {
 
   console.log(location.pathname);
   return (
-    <div className={`${location.pathname === "/landing" ? " " : "flex flex-1 h-[100vh] dark:bg-PrimaryBlack bg-white"} ${isContrast ? "invert contrast-150 saturate-200 brightness-125" : ""}`}>
+    <div className={`${location.pathname === "/" ? " " : "flex flex-1 h-[100vh] dark:bg-PrimaryBlack bg-white"} ${isContrast ? "invert contrast-150 saturate-200 brightness-125" : ""}`}>
       <Toaster position="top-right" reverseOrder={false} />
 
       {!(
-        location.pathname === "/landing" ||
+        location.pathname === "/" ||
         location.pathname === "/register" || location.pathname === "/login"
       ) && <MainSideBar setContrast={setIsContrast} />}
 
-      <div className={location.pathname === "/landing" ? "" : "flex w-full"}>
-        <div className={location.pathname === "/landing" ? "" : "flex w-full"}>
+      <div className={location.pathname === "/" ? "" : "flex w-full"}>
+        <div className={location.pathname === "/" ? "" : "flex w-full"}>
           <Routes>
-            <Route path="/landing" element={<MainHome setContrast={setIsContrast} />} />
-            <Route path="/:id" element={<Home />} />
+            <Route path="/" element={<MainHome setContrast={setIsContrast} />} />
+            <Route path="/chat/:id" element={<Home />} />
             <Route path="/:id/source/:source" element={<Casepdf />} />
             <Route path="/upload" element={<UploadDocument />} />
             <Route path="/upload/:id" element={<UploadDocument />} />
@@ -124,7 +124,7 @@ export default function App() {
           </Routes>
         </div>
         {!(
-          location.pathname === "/register" || location.pathname === "/login" || location === "/landing"
+          location.pathname === "/register" || location.pathname === "/login" || location === "/"
         ) && <NotebookWriter />}
       </div>
     </div>

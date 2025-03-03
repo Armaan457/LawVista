@@ -48,7 +48,7 @@ export default function LoginPage() {
 
       if (data.success) {
         toast.success("Login successful.");
-        navigate("/");
+        navigate("/chat");
       } else {
         toast.error("Login failed. Please try again.");
       }

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const backendUrl = "http://localhost:3000/api";
+const backendUrl = "https://lawvista.onrender.com/api";
 
 const AuthAxios = axios.create({
   baseURL: backendUrl,

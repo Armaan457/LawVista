@@ -137,13 +137,13 @@ const MainSideBar = ({setContrast}) => {
                 : ""
             }`}
             onClick={() => {
-              router("/");
+              router("/chat");
             }}
           >
             <MessageCircle
               size={27}
               color={`${
-                isActive("/") && !isActive("/upload") && !isActive("/notebook")
+                isActive("/chat") && !isActive("/upload") && !isActive("/notebook")
                   ? "white"
                   : "gray"
               }`}
@@ -199,7 +199,7 @@ const MainSideBar = ({setContrast}) => {
             const data = response.data;
             if (data.success) {
               toast.success("Logged out successfully");
-              router("/landing");
+              router("/");
             }
           }}
         >
